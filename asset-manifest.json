@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/rohanrahat/night-sky-visibility-chart.git/static/css/main.6f951699.css",
+    "main.js": "/rohanrahat/night-sky-visibility-chart.git/static/js/main.7046866e.js",
+    "static/js/453.838ddb85.chunk.js": "/rohanrahat/night-sky-visibility-chart.git/static/js/453.838ddb85.chunk.js",
+    "index.html": "/rohanrahat/night-sky-visibility-chart.git/index.html",
+    "main.6f951699.css.map": "/rohanrahat/night-sky-visibility-chart.git/static/css/main.6f951699.css.map",
+    "main.7046866e.js.map": "/rohanrahat/night-sky-visibility-chart.git/static/js/main.7046866e.js.map",
+    "453.838ddb85.chunk.js.map": "/rohanrahat/night-sky-visibility-chart.git/static/js/453.838ddb85.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6f951699.css",
+    "static/js/main.7046866e.js"
+  ]
+}
