@@ -44,7 +44,7 @@ const calculateObjectVisibility = (date, latitude, longitude, targetRA, targetDe
   return result;
 };
 
-const NightSkyVisibilityChart = () => {
+const NightSkyVisibilityChart_stable = () => {
   const [location, setLocation] = useState('');
   const [date, setDate] = useState('');
   const [target, setTarget] = useState('');
@@ -157,4 +157,4 @@ const NightSkyVisibilityChart = () => {
   );
 };
 
-export default NightSkyVisibilityChart;
+export default NightSkyVisibilityChart_stable;
