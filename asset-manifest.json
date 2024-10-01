@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/rohanrahat/night-sky-visibility-chart.git/static/css/main.6f951699.css",
-    "main.js": "/rohanrahat/night-sky-visibility-chart.git/static/js/main.7046866e.js",
-    "static/js/453.838ddb85.chunk.js": "/rohanrahat/night-sky-visibility-chart.git/static/js/453.838ddb85.chunk.js",
-    "index.html": "/rohanrahat/night-sky-visibility-chart.git/index.html",
-    "main.6f951699.css.map": "/rohanrahat/night-sky-visibility-chart.git/static/css/main.6f951699.css.map",
-    "main.7046866e.js.map": "/rohanrahat/night-sky-visibility-chart.git/static/js/main.7046866e.js.map",
-    "453.838ddb85.chunk.js.map": "/rohanrahat/night-sky-visibility-chart.git/static/js/453.838ddb85.chunk.js.map"
+    "main.css": "/night-sky-visibility-chart/static/css/main.92e95468.css",
+    "main.js": "/night-sky-visibility-chart/static/js/main.8ee0ebe1.js",
+    "static/js/453.838ddb85.chunk.js": "/night-sky-visibility-chart/static/js/453.838ddb85.chunk.js",
+    "index.html": "/night-sky-visibility-chart/index.html",
+    "main.92e95468.css.map": "/night-sky-visibility-chart/static/css/main.92e95468.css.map",
+    "main.8ee0ebe1.js.map": "/night-sky-visibility-chart/static/js/main.8ee0ebe1.js.map",
+    "453.838ddb85.chunk.js.map": "/night-sky-visibility-chart/static/js/453.838ddb85.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.6f951699.css",
-    "static/js/main.7046866e.js"
+    "static/css/main.92e95468.css",
+    "static/js/main.8ee0ebe1.js"
   ]
 }
