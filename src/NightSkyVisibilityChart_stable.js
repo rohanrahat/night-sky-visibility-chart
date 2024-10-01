@@ -82,7 +82,7 @@ const NightSkyVisibilityChart_stable = () => {
           <label className="block text-sm font-medium text-gray-700">Observatory Location (lat, lon)</label>
           <input
             type="text"
-            placeholder="e.g. 40.7128, -74.0060"
+            placeholder="e.g. 47.14371, -122.448"
             value={location}
             onChange={(e) => setLocation(e.target.value)}
             className="mt-1 block w-full p-2 border rounded-md shadow-sm"
@@ -101,7 +101,7 @@ const NightSkyVisibilityChart_stable = () => {
           <label className="block text-sm font-medium text-gray-700">Target Object (RA, Dec)</label>
           <input
             type="text"
-            placeholder="e.g. 5.57, 22.01"
+            placeholder="e.g. 4.4567, -55.7858"
             value={target}
             onChange={(e) => setTarget(e.target.value)}
             className="mt-1 block w-full p-2 border rounded-md shadow-sm"

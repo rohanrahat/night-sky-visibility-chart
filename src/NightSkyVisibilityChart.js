@@ -6,7 +6,7 @@ const calculateObjectVisibility = (date, latitude, longitude, targetRA, targetDe
   const result = [];
   const startDate = new Date(date);
   startDate.setHours(14, 0, 0, 0); // Start from noon of the previous day
-  // startDate.setDate(startDate.getDate() - 1);
+  startDate.setDate(startDate.getDate() - 1);
 
   for (let hour = 0; hour < 24; hour++) {
     const currentDate = new Date(startDate.getTime() + hour * 60 * 60 * 1000);
@@ -101,7 +101,7 @@ const NightSkyVisibilityChart = () => {
             <label className="block text-sm font-medium text-gray-700">Observatory Location (lat, lon)</label>
             <input
               type="text"
-              placeholder="e.g. 40.7128, -74.0060"
+              placeholder="e.g. 47.14371, -122.448"
               value={location}
               onChange={(e) => setLocation(e.target.value)}
               className="mt-1 block w-full p-2 border rounded-md shadow-sm"
@@ -120,7 +120,7 @@ const NightSkyVisibilityChart = () => {
             <label className="block text-sm font-medium text-gray-700">Target Object (RA, Dec)</label>
             <input
               type="text"
-              placeholder="e.g. 5.57, 22.01"
+              placeholder="e.g. 4.4567, -55.7858"
               value={target}
               onChange={(e) => setTarget(e.target.value)}
               className="mt-1 block w-full p-2 border rounded-md shadow-sm"
@@ -175,7 +175,7 @@ const NightSkyVisibilityChart = () => {
             ))}
             <Line yAxisId="left" type="monotone" dataKey="altitude" stroke="#8884d8" name={`${objectName || "Object"} Altitude`} unit="°" dot={false} />
             <Line yAxisId="left" type="monotone" dataKey="moonAltitude" stroke="#ffd700" name="Moon Altitude" unit="°" dot={false} />
-            <Line yAxisId="right" type="monotone" dataKey="airmass" stroke="#82ca9d" name="Airmass" dot={false} strokeOpacity={0}/>
+            <Line yAxisId="right" type="monotone" dataKey="airmass" stroke="#82ca9d" name="Airmass" dot={false}/>
           </LineChart>
           </ResponsiveContainer>
         )}
