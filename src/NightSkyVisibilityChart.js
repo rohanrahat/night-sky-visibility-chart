@@ -5,7 +5,7 @@ import SunCalc from 'suncalc';
 const calculateObjectVisibility = (date, latitude, longitude, targetRA, targetDec) => {
   const result = [];
   const startDate = new Date(date);
-  startDate.setHours(12, 0, 0, 0); // Start from noon of the previous day
+  startDate.setHours(14, 0, 0, 0); // Start from noon of the previous day
   startDate.setDate(startDate.getDate() - 1);
 
   for (let hour = 0; hour < 24; hour++) {
@@ -36,11 +36,16 @@ const calculateObjectVisibility = (date, latitude, longitude, targetRA, targetDe
     const moonIllumination = SunCalc.getMoonIllumination(currentDate);
 
     // Calculate airmass (approximation)
-    let airmass = altitude > 0 ? 1 / Math.sin(altitude * Math.PI / 180) : null;
-    
-    if (airmass && (airmass < 1 || airmass > 2)) {
-      airmass = null; // Set to null if it's outside the range
+    let airmass = null;
+    if (altitude > 0) {
+      airmass = 1 / Math.sin(altitude * Math.PI / 180);
+      // Clamp airmass between 1 and 2
+      airmass = Math.max(1, Math.min(2, airmass));
     }
+    
+    // if (airmass && (airmass < 1 || airmass > 2)) {
+    //   airmass = null; // Set to null if it's outside the range
+    // }
 
     result.push({
       time: currentDate.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: false }),
@@ -96,7 +101,7 @@ const NightSkyVisibilityChart = () => {
             <label className="block text-sm font-medium text-gray-700">Observatory Location (lat, lon)</label>
             <input
               type="text"
-              placeholder="e.g. 40.7128, -74.0060"
+              placeholder="e.g. -30.1691, -70.8059"
               value={location}
               onChange={(e) => setLocation(e.target.value)}
               className="mt-1 block w-full p-2 border rounded-md shadow-sm"
@@ -115,7 +120,7 @@ const NightSkyVisibilityChart = () => {
             <label className="block text-sm font-medium text-gray-700">Target Object (RA, Dec)</label>
             <input
               type="text"
-              placeholder="e.g. 5.57, 22.01"
+              placeholder="e.g. 4.4567, -55.7858"
               value={target}
               onChange={(e) => setTarget(e.target.value)}
               className="mt-1 block w-full p-2 border rounded-md shadow-sm"
@@ -146,7 +151,10 @@ const NightSkyVisibilityChart = () => {
           <LineChart data={chartData} margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
             <XAxis 
               dataKey="time"
-              tickFormatter={(time) => time.split(':')[0]}
+              tickFormatter={(time) => {
+                const [hours, minutes] = time.split(':');
+                return `${hours.padStart(2, '0')}:${minutes}`;
+              }}
             >
               <Label value="Time (hours)" offset={-5} position="insideBottom" />
             </XAxis>
@@ -167,7 +175,7 @@ const NightSkyVisibilityChart = () => {
             ))}
             <Line yAxisId="left" type="monotone" dataKey="altitude" stroke="#8884d8" name={`${objectName || "Object"} Altitude`} unit="°" dot={false} />
             <Line yAxisId="left" type="monotone" dataKey="moonAltitude" stroke="#ffd700" name="Moon Altitude" unit="°" dot={false} />
-            <Line yAxisId="right" type="monotone" dataKey="airmass" stroke="#82ca9d" name="Airmass" dot={false} strokeOpacity={0}/>
+            <Line yAxisId="right" type="monotone" dataKey="airmass" stroke="#82ca9d" name="Airmass" dot={false} opacity={0}/>
           </LineChart>
           </ResponsiveContainer>
         )}
