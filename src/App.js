@@ -17,7 +17,7 @@ function App() {
       </main>
       <footer className="bg-gray-800 text-white py-4">
         <p className="text-center text-sm">
-          © {new Date().getFullYear()} Night Sky Visibility Chart. All rights reserved.
+          © {new Date().getFullYear()} Night Sky Visibility Chart. Rohan Rahatgaonkar. All rights reserved.
         </p>
       </footer>
     </div>
