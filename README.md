@@ -27,7 +27,7 @@ You can try the live application here: [Night Sky Visibility Chart](https://roha
 
 5. The resulting chart will show:
    - The altitude of your target object over 24 hours (purple line)
-   - The altitude of the Sun over 24 hours (orange line)
+   - The altitude of the Moon over 24 hours (orange line)
    - A reference line at 0° representing the horizon
 
 ## Technical Details
