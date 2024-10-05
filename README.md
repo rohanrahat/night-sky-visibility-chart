@@ -1,70 +1,86 @@
-# Getting Started with Create React App
+# Night Sky Visibility Chart
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
 
-## Available Scripts
+The Night Sky Visibility Chart is an interactive web application that allows astronomers and stargazers to visualize the visibility of celestial objects from a specific location on Earth. This tool is particularly useful for planning observations and understanding when certain objects will be visible in the night sky.
 
-In the project directory, you can run:
+You can try the live application here: [Night Sky Visibility Chart](https://rohanrahat.github.io/night-sky-visibility-chart/)
 
-### `npm start`
+## Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Input custom observatory locations using latitude and longitude
+- Select specific dates for observation planning
+- Enter celestial object coordinates (Right Ascension and Declination)
+- Generate visibility charts showing object altitude over a 24-hour period
+- Display sun altitude to indicate daylight hours
+- Responsive design for use on various devices
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## How to Use
 
-### `npm test`
+1. **Observatory Location**: Enter the latitude and longitude of your observation point. Use negative values for South latitude and West longitude. (e.g., "-30.169, -70.806" for Cerro Tololo Observatory)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+2. **Observation Date**: Select the date for which you want to generate the visibility chart.
 
-### `npm run build`
+3. **Target Object**: Enter the Right Ascension (RA) and Declination (Dec) of the celestial object you want to observe. Use the format "RA, Dec" in degrees. (e.g., "64.05, -55.78" for NGC 1553)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+4. Click the "Generate Chart" button to create the visibility chart.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+5. The resulting chart will show:
+   - The altitude of your target object over 24 hours (purple line)
+   - The altitude of the Sun over 24 hours (orange line)
+   - A reference line at 0° representing the horizon
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Technical Details
 
-### `npm run eject`
+This application is built using:
+- React.js for the user interface
+- Recharts for chart rendering
+- SunCalc for astronomical calculations
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+The application performs the following calculations:
+- Converts input coordinates to the appropriate format
+- Calculates Local Sidereal Time (LST)
+- Determines object altitude based on celestial coordinates and observer location
+- Computes Sun position and altitude
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Local Development
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+To set up this project locally:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+1. Clone the repository:
+   ```
+   git clone https://github.com/rohanrahat/night-sky-visibility-chart.git
+   ```
 
-## Learn More
+2. Navigate to the project directory:
+   ```
+   cd night-sky-visibility-chart
+   ```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+3. Install dependencies:
+   ```
+   npm install
+   ```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+4. Start the development server:
+   ```
+   npm start
+   ```
 
-### Code Splitting
+5. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Contributing
 
-### Analyzing the Bundle Size
+Contributions to improve the Night Sky Visibility Chart are welcome. Please feel free to submit issues or pull requests.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## License
 
-### Making a Progressive Web App
+This project is open source and available under the [MIT License](LICENSE).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Contact
 
-### Advanced Configuration
+For any queries or suggestions, please open an issue on this GitHub repository.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+---
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Happy stargazing!
